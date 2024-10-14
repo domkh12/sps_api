@@ -10,7 +10,7 @@ WORKDIR /home/gradle/src
 RUN chmod +x ./gradlew
 
 # Build the project
-RUN ./gradlew build --no-daemon
+RUN ./gradlew build --no-daemon --stacktrace --info
 
 # Use a lightweight JDK image for the final stage
 FROM eclipse-temurin:17-jdk-jammy
