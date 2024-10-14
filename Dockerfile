@@ -3,7 +3,7 @@
 FROM ghcr.io/graalvm/jdk-community:21 AS build
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
-RUN gradle build --no-daemon
+RUN chmod +x ./gradlew && ./gradlew build --no-daemon
 
 LABEL org.name="hezf"
 
