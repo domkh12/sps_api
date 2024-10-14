@@ -1,8 +1,5 @@
 FROM ghcr.io/graalvm/jdk-community:21 AS build
 
-# Install xargs and any other necessary tools
-RUN apt-get update && apt-get install -y findutils
-
 # Copy the project files to the container
 COPY --chown=gradle:gradle . /home/gradle/src
 
