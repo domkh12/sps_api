@@ -3,6 +3,10 @@
 FROM ghcr.io/graalvm/jdk-community:21 AS build
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
+# Ensure gradlew is executable
+RUN chmod +x ./gradlew
+
+# Build the project
 RUN ./gradlew build --no-daemon
 
 LABEL org.name="hezf"
